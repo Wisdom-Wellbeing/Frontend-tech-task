@@ -1,4 +1,4 @@
-# Frontend Tech Task for Junior and MiddleWeight Frontend Developer Role
+# Frontend Tech Task for Junior and Middleweight Developer Role
 
 All candidates are required to complete this task as part of our technical assessment process. While we understand your time is valuable and the timeframe may be limited, we encourage you to focus on demonstrating your approach rather than aiming for a fully polished solution.
 
