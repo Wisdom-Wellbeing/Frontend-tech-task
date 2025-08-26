@@ -11,18 +11,25 @@ interface Mood {
 
 export const MoodTrackerCard = () => {
     const [hasLoggedMood, setHasLoggedMood] = useState(false);
-    const [moodMessage, setMoodMessage] = useState<string>()
+    const [selectedMood, setSelectedMood] = useState<Mood>();
     const {moods} = moodsJson
 
     const handleClickMoodTracker = (mood: Mood) => {
         setHasLoggedMood(true);
-        setMoodMessage(mood.message)
+        setSelectedMood(mood)
     };
+
+    const getTitle = () => {
+      if(hasLoggedMood && selectedMood) {
+        return `You are feeling ${selectedMood?.label.toLowerCase()} today!`
+      };
+      return "How are you feeling today?"
+    }
 
   return (
     <div className="rounded-xl shadow-xl p-6 space-y-4 md:w-[650px]">
-        <h2 className="text-xl italic font-medium">{hasLoggedMood ? "You have logged your mood today!" : "How are you feeling today?"}</h2>
-       {moodMessage && hasLoggedMood ? <p>{moodMessage}</p> :
+        <h2 className="text-xl italic font-medium">{getTitle()}</h2>
+       {selectedMood && hasLoggedMood ? <p>{selectedMood.message}</p> :
        <div className="flex items-center justify-between gap-4">
             {moods.map((mood) => <IconButton
               key={mood.id}

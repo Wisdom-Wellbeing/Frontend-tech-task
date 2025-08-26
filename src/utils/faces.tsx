@@ -1,37 +1,37 @@
 import { ReactElement } from "react";
-import { ReactComponent as FaceIconLow} from "../assets/faces/face-low.svg"
-import { ReactComponent as FaceIconSad} from "../assets/faces/face-sad.svg"
-import { ReactComponent as FaceIconOkay} from "../assets/faces/face-okay.svg"
-import { ReactComponent as FaceIconGood} from "../assets/faces/face-good.svg"
-import { ReactComponent as FaceIconGreat} from "../assets/faces/face-great.svg"
+import faceIconLow from "../assets/faces/face-low.svg"
+import faceIconSad from "../assets/faces/face-sad.svg"
+import faceIconOkay from "../assets/faces/face-okay.svg"
+import faceIconGood from "../assets/faces/face-good.svg"
+import faceIconGreat from "../assets/faces/face-great.svg"
 
 export const moodFace = (moodId: number): ReactElement | null => {
-    let Icon = null;
+    let icon = null;
 
     switch (moodId) {
         case 1:
-            Icon = FaceIconLow;
+            icon = faceIconLow;
             break;
         case 2:
-            Icon = FaceIconSad;
+            icon = faceIconSad;
             break;
         case 3:
-            Icon = FaceIconOkay;
+            icon = faceIconOkay;
             break;
         case 4:
-            Icon = FaceIconGood;
+            icon = faceIconGood;
             break;
         case 5:
-            Icon = FaceIconGreat;
+            icon = faceIconGreat;
             break;
         default:
-            Icon = null;
+            icon = null;
             break;
     }
 
-    if(!Icon) {
+    if(!icon) {
         return null;
     }
 
-    return <Icon width="50" height="50" />;
+    return <img alt="mood-face" src={icon} />;
   };

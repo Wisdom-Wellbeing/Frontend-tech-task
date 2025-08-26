@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import { Icon } from "../Icon/Icon";
 
 type IconButtonPropsForIcon = {
   ariaLabel?: string;
@@ -15,7 +14,11 @@ export const IconButton = ({ ariaLabel, icon, handleClick }: IconButtonPropsForI
 
   return (
     <button className="h-full" aria-label={ariaLabel} onClick={() => handleClick()}>
-      <Icon icon={icon} />
+      <div className="flex flex-col items-center w-12">
+        <div className="inline-flex justify-center items-center w-full h-12 w-12 drop-shadow-md rounded-full bg-white">
+          {icon}
+        </div>
+      </div>
     </button>
   );
 };
